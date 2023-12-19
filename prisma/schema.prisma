@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  name     String
+  email    String    @unique
+  homepage String?
+  comments Comment[]
+
+  @@map("User")
+}
+
+model Comment {
+  id        Int       @id @default(autoincrement())
+  captcha   String
+  text      String
+  img       String?
+  file      String?
+  parentId  Int?
+  parent    Comment?  @relation("CommentToComment", fields: [parentId], references: [id], onDelete: Cascade)
+  children  Comment[] @relation("CommentToComment")
+  userEmail String
+  user      User      @relation(fields: [userEmail], references: [email], onDelete: Cascade)
+  createdAt DateTime  @default(now())
+
+  @@map("Comment")
+}

@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "afb73468-511a-471d-aaca-ce42153457fe",
+		"name": "comments-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26042499"
+	},
+	"item": [
+		{
+			"name": "all comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/comment/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comment",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comment by",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/comment/by?commentId=15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comment",
+						"by"
+					],
+					"query": [
+						{
+							"key": "userEmail",
+							"value": "vartallerrab3@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "commentId",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userData\": {\r\n        \"name\":\"vartaller\",\r\n        \"email\":\"vartallerrab3@gmail.com\"\r\n    },\r\n    \"commentData\": {\r\n        \"captcha\":\"xGf!gfd765\",\r\n        \"text\":\"<html>vbvcdgfdgdf hgfghffghf</html>\",\r\n        \"parentId\": 15,\r\n        \"file\": \"E://fds\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
