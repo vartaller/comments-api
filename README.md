@@ -6,18 +6,18 @@ Comments API is a simple API prototype for social media comments.
 
 - Post a new comment
 - Get all comments
-- Get comments by publisger email
+- Get comments by publisher email
 - Get comment by its id
 
 ## Installation and start
 
 Comments API requires [Docker](https://www.docker.com) and [Node.js](https://nodejs.org/) v16+ to run.
 
-Compose and run containers for MySQL and Redis servers. Wait for the servers weill be ready for connections.
+Compose and run containers for MySQL and Redis servers. Wait for the DB servers will be ready for connections.
 ```sh
 docker-compose up
 ```
-Install the dependencies, build app and start the server.
+Install the dependencies, build app and start the app server.
 ```sh
 cd comments-api
 npm i
